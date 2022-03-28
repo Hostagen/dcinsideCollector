@@ -119,16 +119,6 @@ namespace dcinside_collector
             }
         }
 
-        private void gallIDBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void managerTextBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void conformButton_Click(object sender, EventArgs e)
         {
             Close();

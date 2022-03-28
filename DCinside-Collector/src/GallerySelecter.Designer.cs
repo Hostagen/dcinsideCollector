@@ -205,7 +205,6 @@
             this.gallIDBox.UseSelectable = true;
             this.gallIDBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.gallIDBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.gallIDBox.Click += new System.EventHandler(this.gallIDBox_Click);
             // 
             // metroLabel1
             // 
@@ -277,7 +276,6 @@
             this.managerTextBox.UseSelectable = true;
             this.managerTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.managerTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.managerTextBox.Click += new System.EventHandler(this.managerTextBox_Click);
             // 
             // coverImageBox
             // 
