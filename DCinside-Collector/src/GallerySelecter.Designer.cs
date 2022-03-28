@@ -44,12 +44,10 @@
             this.coverImageBox = new System.Windows.Forms.PictureBox();
             this.gallLinkBtn = new MetroFramework.Controls.MetroLink();
             this.rangeDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.conformButton = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coverImageBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // submitButton
@@ -309,11 +307,6 @@
             this.rangeDatePicker.TabIndex = 8;
             this.rangeDatePicker.Value = new System.DateTime(2022, 3, 24, 0, 0, 0, 0);
             // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
             // conformButton
             // 
             this.conformButton.Location = new System.Drawing.Point(23, 337);
@@ -341,7 +334,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coverImageBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,7 +346,6 @@
         private MetroFramework.Controls.MetroTextBox managerTextBox;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLink gallLinkBtn;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.PictureBox coverImageBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MetroFramework.Controls.MetroLabel gallNameLabel;
