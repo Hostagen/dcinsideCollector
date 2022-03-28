@@ -32,12 +32,13 @@
             this.LoadGallButton1 = new MetroFramework.Controls.MetroButton();
             this.disableAnnounCheckBox = new System.Windows.Forms.CheckBox();
             this.articleDataGrid = new System.Windows.Forms.DataGridView();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReplyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.htmlOutputFolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.articleDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,12 +77,6 @@
             this.articleDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.articleDataGrid.RowTemplate.Height = 23;
             // 
-            // metroButton1
-            // 
-            resources.ApplyResources(this.metroButton1, "metroButton1");
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.UseSelectable = true;
-            // 
             // Column1
             // 
             this.Column1.FillWeight = 55.3512F;
@@ -117,6 +112,13 @@
             this.ReplyColumn.Name = "ReplyColumn";
             this.ReplyColumn.ReadOnly = true;
             // 
+            // metroButton1
+            // 
+            resources.ApplyResources(this.metroButton1, "metroButton1");
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click_1);
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -143,6 +145,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn author;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReplyColumn;
+        private System.Windows.Forms.FolderBrowserDialog htmlOutputFolderBrowserDialog;
     }
 }
 
