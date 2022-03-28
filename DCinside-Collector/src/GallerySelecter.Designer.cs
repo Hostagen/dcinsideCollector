@@ -45,9 +45,13 @@
             this.gallLinkBtn = new MetroFramework.Controls.MetroLink();
             this.rangeDatePicker = new System.Windows.Forms.DateTimePicker();
             this.conformButton = new MetroFramework.Controls.MetroButton();
+            this.pageNumberLimit = new System.Windows.Forms.NumericUpDown();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coverImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageNumberLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // submitButton
@@ -96,13 +100,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.metroLabel5);
+            this.groupBox1.Controls.Add(this.metroLabel4);
+            this.groupBox1.Controls.Add(this.pageNumberLimit);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Controls.Add(this.coverImageBox);
             this.groupBox1.Controls.Add(this.gallLinkBtn);
             this.groupBox1.Controls.Add(this.rangeDatePicker);
-            this.groupBox1.Location = new System.Drawing.Point(23, 119);
+            this.groupBox1.Location = new System.Drawing.Point(23, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(500, 212);
+            this.groupBox1.Size = new System.Drawing.Size(500, 239);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "갤러리 정보";
@@ -128,6 +135,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(204, 117);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
@@ -286,7 +294,7 @@
             // 
             // gallLinkBtn
             // 
-            this.gallLinkBtn.Location = new System.Drawing.Point(9, 183);
+            this.gallLinkBtn.Location = new System.Drawing.Point(9, 210);
             this.gallLinkBtn.Name = "gallLinkBtn";
             this.gallLinkBtn.Size = new System.Drawing.Size(485, 23);
             this.gallLinkBtn.TabIndex = 8;
@@ -317,6 +325,31 @@
             this.conformButton.UseSelectable = true;
             this.conformButton.Click += new System.EventHandler(this.conformButton_Click);
             // 
+            // pageNumberLimit
+            // 
+            this.pageNumberLimit.Location = new System.Drawing.Point(95, 170);
+            this.pageNumberLimit.Name = "pageNumberLimit";
+            this.pageNumberLimit.Size = new System.Drawing.Size(115, 21);
+            this.pageNumberLimit.TabIndex = 10;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(6, 172);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel4.TabIndex = 11;
+            this.metroLabel4.Text = "최대 페이지";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(216, 172);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(140, 19);
+            this.metroLabel5.TabIndex = 12;
+            this.metroLabel5.Text = "0으로 설정 시 무제한";
+            // 
             // GallerySelecter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -331,9 +364,11 @@
             this.Text = "Find Gallery";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coverImageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageNumberLimit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,5 +391,8 @@
         private System.Windows.Forms.DateTimePicker rangeDatePicker;
         private MetroFramework.Controls.MetroListView subMangersBox;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private System.Windows.Forms.NumericUpDown pageNumberLimit;
     }
 }

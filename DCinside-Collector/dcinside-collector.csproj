@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80704139-11BE-4A93-ABFE-19EB500E39D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>test</RootNamespace>
+    <AssemblyName>test</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.42.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>packages\HtmlAgilityPack.1.11.42\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.115.5\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.115.5\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DCinside-Collector\Properties\AssemblyInfo.cs" />
+    <Compile Include="DCinside-Collector\Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DCinside-Collector\Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="DCinside-Collector\src\FileChecker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DCinside-Collector\src\FileChecker.Designer.cs">
+      <DependentUpon>FileChecker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DCinside-Collector\src\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DCinside-Collector\src\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DCinside-Collector\src\GallerySelecter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DCinside-Collector\src\GallerySelecter.Designer.cs">
+      <DependentUpon>GallerySelecter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DCinside-Collector\src\Program.cs" />
+    <EmbeddedResource Include="DCinside-Collector\Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DCinside-Collector\src\FileChecker.resx">
+      <DependentUpon>FileChecker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DCinside-Collector\src\Form1.lg.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DCinside-Collector\src\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DCinside-Collector\src\GallerySelecter.resx">
+      <DependentUpon>GallerySelecter.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="packages\EntityFramework.6.4.4\.signature.p7s" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\netcoreapp3.0\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\netcoreapp3.0\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.DefaultItems.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\App.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\App.config.transform" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\Web.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\Web.config.transform" />
+    <None Include="packages\EntityFramework.6.4.4\EntityFramework.6.4.4.nupkg" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.PS2.psd1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.PS2.psm1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.psd1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.psm1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\init.ps1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\install.ps1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.runtimeconfig.json" />
+    <None Include="packages\HtmlAgilityPack.1.11.40\.signature.p7s" />
+    <None Include="packages\HtmlAgilityPack.1.11.40\HtmlAgilityPack.1.11.40.nupkg" />
+    <None Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard1.3\HtmlAgilityPack.deps.json" />
+    <None Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard1.6\HtmlAgilityPack.deps.json" />
+    <None Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard2.0\HtmlAgilityPack.deps.json" />
+    <None Include="packages\HtmlAgilityPack.1.11.40\lib\uap10.0\HtmlAgilityPack.pri" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\.signature.p7s" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\buildTransitive\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\buildTransitive\net40\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\buildTransitive\net451\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\buildTransitive\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\buildTransitive\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net40\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net451\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net20\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net40\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net451\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net45\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5.nupkg" />
+    <None Include="packages\System.Data.SQLite.1.0.115.5\.signature.p7s" />
+    <None Include="packages\System.Data.SQLite.1.0.115.5\System.Data.SQLite.1.0.115.5.nupkg" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.115.5\.signature.p7s" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.115.5\System.Data.SQLite.Core.1.0.115.5.nupkg" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\.signature.p7s" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net40\app.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net40\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net40\web.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net40\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net451\app.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net451\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net451\web.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net451\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net45\app.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net45\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net45\web.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net45\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net46\app.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net46\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net46\web.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\content\net46\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\System.Data.SQLite.EF6.1.0.115.5.nupkg" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\tools\net40\install.ps1" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\tools\net451\install.ps1" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\tools\net45\install.ps1" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.115.5\tools\net46\install.ps1" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\.signature.p7s" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\content\net20\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\content\net20\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\content\net40\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\content\net40\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\content\net451\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\content\net451\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\content\net45\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\content\net45\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\content\net46\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\content\net46\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.115.5\System.Data.SQLite.Linq.1.0.115.5.nupkg" />
+    <None Include="DCinside-Collector\Properties\Settings.settings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DCinside-Collector\assets\icons\logo.ico" />
+    <Content Include="packages\EntityFramework.6.4.4\build\Microsoft.Data.Entity.Build.Tasks.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\Icon.png" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\about_EntityFramework6.help.txt" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net35\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net35\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net35\HtmlAgilityPack.xml" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net40-client\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net40-client\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net40-client\HtmlAgilityPack.xml" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net40\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net40\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net40\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net45\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net45\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\Net45\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\NetCore45\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\NetCore45\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\NetCore45\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard1.3\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard1.3\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard1.3\HtmlAgilityPack.xml" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard1.6\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard1.6\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard1.6\HtmlAgilityPack.xml" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard2.0\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard2.0\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\netstandard2.0\HtmlAgilityPack.xml" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\portable-net45+netcore45+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\portable-net45+netcore45+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\portable-net45+netcore45+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\uap10.0\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\uap10.0\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.11.40\lib\uap10.0\HtmlAgilityPack.XML" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net20\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net20\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net40\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net40\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net451\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net451\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net45\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net45\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net20\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net20\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net40\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net40\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net451\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net451\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net45\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net45\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Data.SQLite.EF6.1.0.115.5\lib\net40\System.Data.SQLite.EF6.dll" />
+    <Content Include="packages\System.Data.SQLite.EF6.1.0.115.5\lib\net451\System.Data.SQLite.EF6.dll" />
+    <Content Include="packages\System.Data.SQLite.EF6.1.0.115.5\lib\net45\System.Data.SQLite.EF6.dll" />
+    <Content Include="packages\System.Data.SQLite.EF6.1.0.115.5\lib\net46\System.Data.SQLite.EF6.dll" />
+    <Content Include="packages\System.Data.SQLite.EF6.1.0.115.5\lib\netstandard2.1\System.Data.SQLite.EF6.dll" />
+    <Content Include="packages\System.Data.SQLite.Linq.1.0.115.5\lib\net20\System.Data.SQLite.Linq.dll" />
+    <Content Include="packages\System.Data.SQLite.Linq.1.0.115.5\lib\net40\System.Data.SQLite.Linq.dll" />
+    <Content Include="packages\System.Data.SQLite.Linq.1.0.115.5\lib\net451\System.Data.SQLite.Linq.dll" />
+    <Content Include="packages\System.Data.SQLite.Linq.1.0.115.5\lib\net45\System.Data.SQLite.Linq.dll" />
+    <Content Include="packages\System.Data.SQLite.Linq.1.0.115.5\lib\net46\System.Data.SQLite.Linq.dll" />
+    <Content Include="DCinside-Collector\sql\createArticle.sql" />
+    <Content Include="DCinside-Collector\sql\inseartArticle.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DCinside-Collector\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>

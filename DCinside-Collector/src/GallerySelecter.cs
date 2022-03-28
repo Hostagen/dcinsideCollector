@@ -139,5 +139,13 @@ namespace dcinside_collector
                 return rangeDatePicker;
             }
         }
+
+        public decimal PageLimit
+        {
+            get
+            {
+                return pageNumberLimit.Value;
+            }
+        }
     }
 }

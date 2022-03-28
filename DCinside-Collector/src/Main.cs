@@ -72,7 +72,14 @@ namespace dcinside_collector
                 HtmlNode articleNameNode = node.SelectSingleNode("td/a");
                 string articleName = articleNameNode.InnerText;
 
-                //HtmlNode authorName = node.SelectSingleNode()
+                HtmlNode authorName = node.SelectSingleNode(".//span[@class='nickname']");
+
+                if (authorName == null)
+                {
+                    authorName = node.SelectSingleNode(".//span[@class='nickname in']");
+                }
+                
+                HtmlNode authorIP = node.SelectSingleNode(".//span[@class='ip']");
 
                 HtmlNode dateNode = node.SelectSingleNode("./td[@class='gall_date']");
                 DateTime articleDate = ConverToDate(dateNode.InnerText);
@@ -80,9 +87,19 @@ namespace dcinside_collector
                 Article result = new Article(
                     subject: articleSubject,
                     title: articleName,
-                    owner: "ㅇㅇ",
+                    owner: authorName.InnerText,
                     datetime: articleDate
                 );
+
+                if (authorIP == null)
+                {
+                    result.FixNickname = true;
+                }
+
+                else
+                {
+                    result.author = $"{result.author}{authorIP.InnerText}";
+                }
 
                 results.Add(result);
             }
@@ -101,7 +118,7 @@ namespace dcinside_collector
                 return;
             }
 
-            string baseURL = "{0}&page={1}";
+            string baseURL = "{0}&list_num=100&page={1}";
 
             articleDataGrid.Rows.Clear();
 
@@ -113,7 +130,12 @@ namespace dcinside_collector
 
             for (i = 1; ; i++)
             {
-                Console.WriteLine(i);
+
+                if (newFrom.PageLimit != 0 && i > newFrom.PageLimit)
+                {
+                    break;
+                }
+
                 string url = String.Format(baseURL, gallURL, i.ToString());
                 HtmlAgilityPack.HtmlDocument htmlDoc = web.Load(url);
 
@@ -147,13 +169,21 @@ namespace dcinside_collector
         public string Name;
         public string author;
         public DateTime Created_at;
+        public bool FixNickname;
 
-        public Article(string subject, string title, string owner, DateTime datetime)
+        public Article(
+            string subject,
+            string title,
+            string owner,
+            DateTime datetime,
+            bool fix = false
+            )
         {
             Category = subject;
             Name = title;
             author = owner;
             Created_at = datetime;
+            FixNickname = fix;
         }
     }
 }
