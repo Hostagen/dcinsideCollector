@@ -121,6 +121,7 @@ namespace dcinside_collector
 
         private void conformButton_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.OK;
             Close();
         }
 
