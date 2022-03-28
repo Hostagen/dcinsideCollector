@@ -84,11 +84,14 @@ namespace dcinside_collector
                 HtmlNode dateNode = node.SelectSingleNode("./td[@class='gall_date']");
                 DateTime articleDate = ConverToDate(dateNode.InnerText);
 
+                HtmlNode replyNode = node.SelectSingleNode(".//span[@class='reply_num']");
+
                 Article result = new Article(
                     subject: articleSubject,
                     title: articleName,
                     owner: authorName.InnerText,
-                    datetime: articleDate
+                    datetime: articleDate,
+                    commentCount: 0
                 );
 
                 if (authorIP == null)
@@ -99,6 +102,12 @@ namespace dcinside_collector
                 else
                 {
                     result.author = $"{result.author}{authorIP.InnerText}";
+                }
+
+                if (replyNode != null)
+                {
+                    string stringReplyCount = Regex.Replace(replyNode.InnerText, @"[^0-9]", "");
+                    result.CommentCount = int.Parse(stringReplyCount);
                 }
 
                 results.Add(result);
@@ -126,9 +135,9 @@ namespace dcinside_collector
 
             DateTime getRangeDate = newFrom.GetRange.Value;
 
-            int i;
+            Dictionary<string, int> commentCount = new Dictionary<string, int>() { };
 
-            for (i = 1; ; i++)
+            for (int i = 1; ; i++)
             {
 
                 if (newFrom.PageLimit != 0 && i > newFrom.PageLimit)
@@ -158,17 +167,25 @@ namespace dcinside_collector
 
                 foreach (Article article in articles)
                 {
-                    articleDataGrid.Rows.Add(article.Category, article.Name, article.author, article.Created_at);
+                    articleDataGrid.Rows.Add(
+                        article.Category,
+                        article.Name,
+                        article.author,
+                        article.Created_at,
+                        article.CommentCount
+                    );
                 }
             }
         }
     }
+
     class Article
     {
         public string Category;
         public string Name;
         public string author;
         public DateTime Created_at;
+        public int CommentCount;
         public bool FixNickname;
 
         public Article(
@@ -176,6 +193,7 @@ namespace dcinside_collector
             string title,
             string owner,
             DateTime datetime,
+            int commentCount,
             bool fix = false
             )
         {
@@ -184,6 +202,7 @@ namespace dcinside_collector
             author = owner;
             Created_at = datetime;
             FixNickname = fix;
+            CommentCount = commentCount;
         }
     }
 }
