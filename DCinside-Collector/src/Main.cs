@@ -134,7 +134,7 @@ namespace dcinside_collector
 
                 HtmlWeb web = new HtmlWeb();
 
-                DateTime getRangeDate = newFrom.GetRange.Value;
+                DateTime getRangeDate = newFrom.EndDatePicker.Value;
 
                 Articles.Clear();
 

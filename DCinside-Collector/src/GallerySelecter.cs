@@ -25,8 +25,12 @@ namespace dcinside_collector
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            startDatePicker.MaxDate = DateTime.Now;
-            startDatePicker.Value = DateTime.Now;
+            DateTime now = DateTime.Now;
+            startDatePicker.MaxDate = now;
+            startDatePicker.Value = now;
+
+            endDateTimePicker.MaxDate = now;
+            endDateTimePicker.Value = now.AddMonths(-1);
         }
 
         private void submitButton_Click(object sender, EventArgs e)
@@ -82,25 +86,19 @@ namespace dcinside_collector
                     return;
 
                 case true when infoBoxNode != null:
-                    HtmlNodeCollection infoContNodes = infoBoxNode.SelectNodes("//div[@class='info_cont']");
+                    HtmlNode infoContBox = htmlDoc.DocumentNode.SelectSingleNode("//div[@class='info_contbox']");
 
-                    foreach (HtmlNode node in infoContNodes)
-                    {
-                        managerTextBox.Text += node.InnerText;
-                    }
+                    HtmlNodeCollection infoConts = infoContBox.SelectNodes("./div[@class='info_cont']");
+
+                    HtmlNode mangerNode = infoConts.First();
+                    HtmlNode mngNickNode = mangerNode.SelectSingleNode(".//span[@class='mng_nick']");
+                    mangerNameBox.Text = mngNickNode.InnerText;
 
                     break;
             }
 
             gallNameBox.Text = titleNode.Attributes["content"].Value;
             gallIDBox.Text = gallidTextBox.Text;
-
-            HtmlNode body = htmlDoc.DocumentNode.SelectSingleNode("//body");
-
-            //HtmlNode gallInfoBox = body.SelectNodes("//a[@class='mintro_imgbox in_img ']");
-            //string rawCoverImageHref = coverImageNode.Attributes["href"].Value;
-
-            //string[] coverImageURL = rawCoverImageHref.Split('\'');
         }   
 
         private void gallIdTextBox_KeyDown(object sender, KeyEventArgs e)
