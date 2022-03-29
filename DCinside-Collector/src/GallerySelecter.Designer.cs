@@ -365,9 +365,9 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.Location = new System.Drawing.Point(3, 172);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(83, 19);
             this.metroLabel6.TabIndex = 11;
-            this.metroLabel6.Text = "최대 날짜";
+            this.metroLabel6.Text = "끝나는 날짜";
             // 
             // endDateTimePicker
             // 
