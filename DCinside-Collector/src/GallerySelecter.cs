@@ -25,8 +25,8 @@ namespace dcinside_collector
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            rangeDatePicker.MaxDate = DateTime.Now;
-            rangeDatePicker.Value = DateTime.Now;
+            startDatePicker.MaxDate = DateTime.Now;
+            startDatePicker.Value = DateTime.Now;
         }
 
         private void submitButton_Click(object sender, EventArgs e)
@@ -133,11 +133,19 @@ namespace dcinside_collector
             }
         }
 
-        public DateTimePicker GetRange
+        public DateTimePicker StartDatePicker
         {
             get
             {
-                return rangeDatePicker;
+                return startDatePicker;
+            }
+        }
+
+        public DateTimePicker EndDatePicker
+        {
+            get
+            {
+                return endDateTimePicker;
             }
         }
 

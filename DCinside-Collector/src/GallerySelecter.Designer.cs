@@ -41,16 +41,16 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.managerTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.coverImageBox = new System.Windows.Forms.PictureBox();
             this.gallLinkBtn = new MetroFramework.Controls.MetroLink();
-            this.rangeDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.startDatePicker = new System.Windows.Forms.DateTimePicker();
             this.conformButton = new MetroFramework.Controls.MetroButton();
             this.pageNumberLimit = new System.Windows.Forms.NumericUpDown();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.coverImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageNumberLimit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,13 +100,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.metroLabel5);
-            this.groupBox1.Controls.Add(this.metroLabel4);
-            this.groupBox1.Controls.Add(this.pageNumberLimit);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Controls.Add(this.coverImageBox);
-            this.groupBox1.Controls.Add(this.gallLinkBtn);
-            this.groupBox1.Controls.Add(this.rangeDatePicker);
             this.groupBox1.Location = new System.Drawing.Point(23, 92);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(500, 239);
@@ -116,11 +110,19 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.CausesValidation = false;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.gallNameLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pageNumberLimit, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.metroLabel5, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.metroLabel4, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.startDatePicker, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.gallNameBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.gallIDBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel1, 0, 1);
@@ -128,21 +130,26 @@
             this.tableLayoutPanel1.Controls.Add(this.metroLabel2, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.managerTextBox, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.metroLabel6, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.endDateTimePicker, 1, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 20);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(204, 117);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(488, 195);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // gallNameLabel
             // 
+            this.gallNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gallNameLabel.AutoSize = true;
-            this.gallNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.gallNameLabel.Location = new System.Drawing.Point(3, 5);
             this.gallNameLabel.Name = "gallNameLabel";
             this.gallNameLabel.Size = new System.Drawing.Size(37, 19);
             this.gallNameLabel.TabIndex = 0;
@@ -150,11 +157,12 @@
             // 
             // gallNameBox
             // 
+            this.gallNameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.gallNameBox.CustomButton.Image = null;
-            this.gallNameBox.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.gallNameBox.CustomButton.Location = new System.Drawing.Point(371, 1);
             this.gallNameBox.CustomButton.Name = "";
             this.gallNameBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.gallNameBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -164,7 +172,7 @@
             this.gallNameBox.CustomButton.Visible = false;
             this.gallNameBox.Enabled = false;
             this.gallNameBox.Lines = new string[0];
-            this.gallNameBox.Location = new System.Drawing.Point(74, 3);
+            this.gallNameBox.Location = new System.Drawing.Point(92, 3);
             this.gallNameBox.MaxLength = 32767;
             this.gallNameBox.Name = "gallNameBox";
             this.gallNameBox.PasswordChar = '\0';
@@ -174,7 +182,7 @@
             this.gallNameBox.SelectionLength = 0;
             this.gallNameBox.SelectionStart = 0;
             this.gallNameBox.ShortcutsEnabled = true;
-            this.gallNameBox.Size = new System.Drawing.Size(122, 23);
+            this.gallNameBox.Size = new System.Drawing.Size(393, 23);
             this.gallNameBox.TabIndex = 1;
             this.gallNameBox.UseSelectable = true;
             this.gallNameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -182,11 +190,12 @@
             // 
             // gallIDBox
             // 
+            this.gallIDBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.gallIDBox.CustomButton.Image = null;
-            this.gallIDBox.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.gallIDBox.CustomButton.Location = new System.Drawing.Point(371, 1);
             this.gallIDBox.CustomButton.Name = "";
             this.gallIDBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.gallIDBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -196,7 +205,7 @@
             this.gallIDBox.CustomButton.Visible = false;
             this.gallIDBox.Enabled = false;
             this.gallIDBox.Lines = new string[0];
-            this.gallIDBox.Location = new System.Drawing.Point(74, 32);
+            this.gallIDBox.Location = new System.Drawing.Point(92, 32);
             this.gallIDBox.MaxLength = 32767;
             this.gallIDBox.Name = "gallIDBox";
             this.gallIDBox.PasswordChar = '\0';
@@ -206,7 +215,7 @@
             this.gallIDBox.SelectionLength = 0;
             this.gallIDBox.SelectionStart = 0;
             this.gallIDBox.ShortcutsEnabled = true;
-            this.gallIDBox.Size = new System.Drawing.Size(122, 23);
+            this.gallIDBox.Size = new System.Drawing.Size(393, 23);
             this.gallIDBox.TabIndex = 3;
             this.gallIDBox.UseSelectable = true;
             this.gallIDBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -214,8 +223,9 @@
             // 
             // metroLabel1
             // 
+            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 29);
+            this.metroLabel1.Location = new System.Drawing.Point(3, 34);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(21, 19);
             this.metroLabel1.TabIndex = 2;
@@ -223,20 +233,22 @@
             // 
             // subMangersBox
             // 
+            this.subMangersBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.subMangersBox.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.subMangersBox.FullRowSelect = true;
-            this.subMangersBox.Location = new System.Drawing.Point(74, 61);
+            this.subMangersBox.Location = new System.Drawing.Point(92, 61);
             this.subMangersBox.Name = "subMangersBox";
             this.subMangersBox.OwnerDraw = true;
-            this.subMangersBox.Size = new System.Drawing.Size(121, 24);
+            this.subMangersBox.Size = new System.Drawing.Size(393, 24);
             this.subMangersBox.TabIndex = 4;
             this.subMangersBox.UseCompatibleStateImageBehavior = false;
             this.subMangersBox.UseSelectable = true;
             // 
             // metroLabel2
             // 
+            this.metroLabel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(3, 88);
+            this.metroLabel2.Location = new System.Drawing.Point(3, 91);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(65, 19);
             this.metroLabel2.TabIndex = 5;
@@ -244,8 +256,9 @@
             // 
             // metroLabel3
             // 
+            this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(3, 58);
+            this.metroLabel3.Location = new System.Drawing.Point(3, 63);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(51, 19);
             this.metroLabel3.TabIndex = 6;
@@ -253,13 +266,14 @@
             // 
             // managerTextBox
             // 
+            this.managerTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.managerTextBox.CustomButton.Image = null;
-            this.managerTextBox.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.managerTextBox.CustomButton.Location = new System.Drawing.Point(375, 2);
             this.managerTextBox.CustomButton.Name = "";
-            this.managerTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.managerTextBox.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.managerTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.managerTextBox.CustomButton.TabIndex = 1;
             this.managerTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -267,7 +281,7 @@
             this.managerTextBox.CustomButton.Visible = false;
             this.managerTextBox.Enabled = false;
             this.managerTextBox.Lines = new string[0];
-            this.managerTextBox.Location = new System.Drawing.Point(74, 91);
+            this.managerTextBox.Location = new System.Drawing.Point(92, 91);
             this.managerTextBox.MaxLength = 32767;
             this.managerTextBox.Name = "managerTextBox";
             this.managerTextBox.PasswordChar = '\0';
@@ -277,49 +291,41 @@
             this.managerTextBox.SelectionLength = 0;
             this.managerTextBox.SelectionStart = 0;
             this.managerTextBox.ShortcutsEnabled = true;
-            this.managerTextBox.Size = new System.Drawing.Size(122, 23);
+            this.managerTextBox.Size = new System.Drawing.Size(393, 20);
             this.managerTextBox.TabIndex = 7;
             this.managerTextBox.UseSelectable = true;
             this.managerTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.managerTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // coverImageBox
-            // 
-            this.coverImageBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.coverImageBox.Location = new System.Drawing.Point(324, 20);
-            this.coverImageBox.Name = "coverImageBox";
-            this.coverImageBox.Size = new System.Drawing.Size(170, 107);
-            this.coverImageBox.TabIndex = 3;
-            this.coverImageBox.TabStop = false;
-            // 
             // gallLinkBtn
             // 
-            this.gallLinkBtn.Location = new System.Drawing.Point(9, 210);
+            this.gallLinkBtn.Location = new System.Drawing.Point(415, 337);
             this.gallLinkBtn.Name = "gallLinkBtn";
-            this.gallLinkBtn.Size = new System.Drawing.Size(485, 23);
+            this.gallLinkBtn.Size = new System.Drawing.Size(108, 23);
             this.gallLinkBtn.TabIndex = 8;
             this.gallLinkBtn.Text = "바로가기";
             this.gallLinkBtn.UseSelectable = true;
             this.gallLinkBtn.Click += new System.EventHandler(this.gallLinkBtn_Click);
             // 
-            // rangeDatePicker
+            // startDatePicker
             // 
-            this.rangeDatePicker.CustomFormat = "yyyy-MM";
-            this.rangeDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.rangeDatePicker.Location = new System.Drawing.Point(6, 143);
-            this.rangeDatePicker.MaxDate = new System.DateTime(2022, 3, 24, 0, 0, 0, 0);
-            this.rangeDatePicker.MinDate = new System.DateTime(1999, 12, 31, 0, 0, 0, 0);
-            this.rangeDatePicker.Name = "rangeDatePicker";
-            this.rangeDatePicker.ShowUpDown = true;
-            this.rangeDatePicker.Size = new System.Drawing.Size(204, 21);
-            this.rangeDatePicker.TabIndex = 8;
-            this.rangeDatePicker.Value = new System.DateTime(2022, 3, 24, 0, 0, 0, 0);
+            this.startDatePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.startDatePicker.CustomFormat = "yyyy-MM";
+            this.startDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.startDatePicker.Location = new System.Drawing.Point(92, 144);
+            this.startDatePicker.MaxDate = new System.DateTime(2022, 3, 24, 0, 0, 0, 0);
+            this.startDatePicker.MinDate = new System.DateTime(1999, 12, 31, 0, 0, 0, 0);
+            this.startDatePicker.Name = "startDatePicker";
+            this.startDatePicker.ShowUpDown = true;
+            this.startDatePicker.Size = new System.Drawing.Size(393, 21);
+            this.startDatePicker.TabIndex = 8;
+            this.startDatePicker.Value = new System.DateTime(2022, 3, 24, 0, 0, 0, 0);
             // 
             // conformButton
             // 
             this.conformButton.Location = new System.Drawing.Point(23, 337);
             this.conformButton.Name = "conformButton";
-            this.conformButton.Size = new System.Drawing.Size(500, 23);
+            this.conformButton.Size = new System.Drawing.Size(386, 23);
             this.conformButton.TabIndex = 3;
             this.conformButton.Text = "확인";
             this.conformButton.UseSelectable = true;
@@ -327,15 +333,17 @@
             // 
             // pageNumberLimit
             // 
-            this.pageNumberLimit.Location = new System.Drawing.Point(95, 170);
+            this.pageNumberLimit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pageNumberLimit.Location = new System.Drawing.Point(92, 117);
             this.pageNumberLimit.Name = "pageNumberLimit";
-            this.pageNumberLimit.Size = new System.Drawing.Size(115, 21);
+            this.pageNumberLimit.Size = new System.Drawing.Size(393, 21);
             this.pageNumberLimit.TabIndex = 10;
             // 
             // metroLabel4
             // 
+            this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(6, 172);
+            this.metroLabel4.Location = new System.Drawing.Point(3, 118);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(83, 19);
             this.metroLabel4.TabIndex = 11;
@@ -343,12 +351,37 @@
             // 
             // metroLabel5
             // 
+            this.metroLabel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(216, 172);
+            this.metroLabel5.Location = new System.Drawing.Point(3, 145);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(140, 19);
-            this.metroLabel5.TabIndex = 12;
-            this.metroLabel5.Text = "0으로 설정 시 무제한";
+            this.metroLabel5.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel5.TabIndex = 11;
+            this.metroLabel5.Text = "시작 날짜";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(3, 172);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel6.TabIndex = 11;
+            this.metroLabel6.Text = "최대 날짜";
+            // 
+            // endDateTimePicker
+            // 
+            this.endDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.endDateTimePicker.CustomFormat = "yyyy-MM";
+            this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.endDateTimePicker.Location = new System.Drawing.Point(92, 171);
+            this.endDateTimePicker.MaxDate = new System.DateTime(2022, 3, 24, 0, 0, 0, 0);
+            this.endDateTimePicker.MinDate = new System.DateTime(1999, 12, 31, 0, 0, 0, 0);
+            this.endDateTimePicker.Name = "endDateTimePicker";
+            this.endDateTimePicker.ShowUpDown = true;
+            this.endDateTimePicker.Size = new System.Drawing.Size(393, 21);
+            this.endDateTimePicker.TabIndex = 8;
+            this.endDateTimePicker.Value = new System.DateTime(2022, 3, 24, 0, 0, 0, 0);
             // 
             // GallerySelecter
             // 
@@ -356,6 +389,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 383);
             this.Controls.Add(this.conformButton);
+            this.Controls.Add(this.gallLinkBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gallidTextBox);
             this.Controls.Add(this.submitButton);
@@ -367,7 +401,6 @@
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.coverImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageNumberLimit)).EndInit();
             this.ResumeLayout(false);
 
@@ -381,18 +414,19 @@
         private MetroFramework.Controls.MetroTextBox managerTextBox;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLink gallLinkBtn;
-        private System.Windows.Forms.PictureBox coverImageBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MetroFramework.Controls.MetroLabel gallNameLabel;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox gallNameBox;
         private MetroFramework.Controls.MetroTextBox gallIDBox;
         private MetroFramework.Controls.MetroButton conformButton;
-        private System.Windows.Forms.DateTimePicker rangeDatePicker;
+        private System.Windows.Forms.DateTimePicker startDatePicker;
         private MetroFramework.Controls.MetroListView subMangersBox;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private System.Windows.Forms.NumericUpDown pageNumberLimit;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private System.Windows.Forms.NumericUpDown pageNumberLimit;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private System.Windows.Forms.DateTimePicker endDateTimePicker;
     }
 }
