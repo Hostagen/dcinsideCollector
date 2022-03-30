@@ -23,8 +23,8 @@ namespace dcinside_collector
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            FileChecker checkForm = new FileChecker();
-            checkForm.ShowDialog();
+            //FileChecker checkForm = new FileChecker();
+            //checkForm.ShowDialog();
         }
 
         private readonly Regex TIME_REGEX = new Regex(@"[0-9]{2}:[0-9]{2}");
@@ -180,9 +180,15 @@ namespace dcinside_collector
                             break;
                         }
 
-                        Articles.Add(article.GallNum, article);
+                        try
+                        {
+                            Articles.Add(article.GallNum, article);
+                        }
 
-                        Console.WriteLine(article.Created_at);
+                        catch(Exception)
+                        {
+                            continue;
+                        }
 
                         articleDataGrid.Rows.Add(
                             article.Category,
@@ -216,6 +222,7 @@ namespace dcinside_collector
             if (htmlSaveDialog.ShowDialog() == DialogResult.OK)
             {
                 HtmlAgilityPack.HtmlDocument outputDoc = new HtmlAgilityPack.HtmlDocument();
+                HtmlNode brNode = HtmlNode.CreateNode("<div><br></div>");
 
                 var commentCountSpan = HtmlNode.CreateNode("<p><span style='font-size: 36pt;'>댓글 수 기준</span></p>");
                 outputDoc.DocumentNode.AppendChild(commentCountSpan);
@@ -231,7 +238,56 @@ namespace dcinside_collector
 
                 int i = 0;
 
-                HtmlNode brNode = HtmlNode.CreateNode("<br />");
+                foreach (var entry in sortedDict)
+                {
+                    i += 1;
+
+                    string href = $"{gallURL}&no={entry.Key.GallNum}";
+
+                    Article article = entry.Key;
+
+                    string paragraph = String.Format(
+                        @"
+                        <p>
+                            <a href='{0}' target='_blank' class='tx-link'>
+                                {1}. {2} / 달린 댓글 수: {3} / 작성자: {4}
+                            </a>
+                        </p>",
+                        href,
+                        i,
+                        article.Name,
+                        article.CommentCount,
+                        article.Author
+                    );
+
+                    HtmlNode commentCountParagraph = HtmlNode.CreateNode(paragraph);
+
+                    outputDoc.DocumentNode.AppendChild(commentCountParagraph);
+
+                    if (i >= 100)
+                    {
+                        break;
+                    }
+                }
+                
+                for (i = 0; i > 3; i++)
+                {
+                    outputDoc.DocumentNode.AppendChild(brNode);
+                }
+
+                var recommendRankSpan = HtmlNode.CreateNode("<p><span style='font-size: 36pt;'>추천 수 기준</span></p>");
+                outputDoc.DocumentNode.AppendChild(recommendRankSpan);
+
+                Dictionary<Article, int> recommentRank = new Dictionary<Article, int>();
+
+                foreach (KeyValuePair<string, Article> item in Articles)
+                {
+                    recommentRank.Add(item.Value, item.Value.Recommend);
+                }
+
+                sortedDict = from entry in recommentRank orderby entry.Value descending select entry;
+
+                i = 0;
 
                 foreach (var entry in sortedDict)
                 {
@@ -245,19 +301,68 @@ namespace dcinside_collector
                         @"
                         <p>
                             <a href='{0}' target='_blank' class='tx-link'>
-                                {1}. {2} / 달린 댓글 수 {3} / 작성자: {4}
+                                {1}. {2} / 추천 수: {3} / 작성자: {4}
                             </a>
                         </p>",
                         href,
                         i,
                         article.Name,
-                        article.CommentCount,
+                        article.Recommend,
                         article.Author
                     );
 
                     HtmlNode commentCountParagraph = HtmlNode.CreateNode(paragraph);
 
-                    Console.WriteLine(paragraph);
+                    outputDoc.DocumentNode.AppendChild(commentCountParagraph);
+
+                    if (i >= 100)
+                    {
+                        break;
+                    }
+                }
+
+                for (i = 0; i > 3; i++)
+                {
+                    outputDoc.DocumentNode.AppendChild(brNode);
+                }
+
+                var viewRankSpan = HtmlNode.CreateNode("<p><span style='font-size: 36pt;'>조회수 기준</span></p>");
+                outputDoc.DocumentNode.AppendChild(viewRankSpan);
+
+                Dictionary<Article, int> viewRank = new Dictionary<Article, int>();
+
+                foreach (KeyValuePair<string, Article> item in Articles)
+                {
+                    viewRank.Add(item.Value, item.Value.Views);
+                }
+
+                sortedDict = from entry in viewRank orderby entry.Value descending select entry;
+
+                i = 0;
+
+                foreach (var entry in sortedDict)
+                {
+                    i += 1;
+
+                    string href = $"{gallURL}&no={entry.Key.GallNum}";
+
+                    Article article = entry.Key;
+
+                    string paragraph = String.Format(
+                        @"
+                        <p>
+                            <a href='{0}' target='_blank' class='tx-link'>
+                                {1}. {2} / 조회수: {3} / 작성자: {4}
+                            </a>
+                        </p>",
+                        href,
+                        i,
+                        article.Name,
+                        article.Views,
+                        article.Author
+                    );
+
+                    HtmlNode commentCountParagraph = HtmlNode.CreateNode(paragraph);
 
                     outputDoc.DocumentNode.AppendChild(commentCountParagraph);
 
