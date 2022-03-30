@@ -88,13 +88,18 @@ namespace dcinside_collector
 
                 HtmlNode replyNode = node.SelectSingleNode(".//span[@class='reply_num']");
 
+                HtmlNode viewNode = node.SelectSingleNode("./td[@class='gall_count']");
+                HtmlNode recommendNode = node.SelectSingleNode("./td[@class='gall_recommend']");
+
                 Article result = new Article(
                     articleNumber: articleNum.InnerText,
                     subject: articleSubject,
                     title: articleName,
                     owner: authorName.InnerText,
                     datetime: articleDate,
-                    commentCount: 0
+                    commentCount: 0,
+                    views: int.Parse(viewNode.InnerText),
+                    recommend: int.Parse(recommendNode.InnerText)
                 );
 
                 if (authorIP == null)
@@ -121,12 +126,12 @@ namespace dcinside_collector
 
         private Dictionary<string, Article> Articles = new Dictionary<string, Article>() { };
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void loadGalleryButton_Click(object sender, EventArgs e)
         {
-            GallerySelecter newFrom = new GallerySelecter();
+            GallerySelecter selecterForm = new GallerySelecter();
 
-            if (newFrom.ShowDialog() == DialogResult.OK) { 
-                gallURL = newFrom.gallUrl;
+            if (selecterForm.ShowDialog() == DialogResult.OK) { 
+                gallURL = selecterForm.gallUrl;
 
                 string baseURL = "{0}&list_num=100&page={1}";
 
@@ -134,14 +139,16 @@ namespace dcinside_collector
 
                 HtmlWeb web = new HtmlWeb();
 
-                DateTime getRangeDate = newFrom.EndDatePicker.Value;
+                DateTime startDatePickerValue = selecterForm.StartDatePicker.Value;
+                DateTime endDatePickerValue = selecterForm.EndDatePicker.Value;
 
                 Articles.Clear();
+
 
                 for (int i = 1; ; i++)
                 {
 
-                    if (newFrom.PageLimit != 0 && i > newFrom.PageLimit)
+                    if (selecterForm.PageLimit != 0 && i > selecterForm.PageLimit)
                     {
                         break;
                     }
@@ -155,20 +162,27 @@ namespace dcinside_collector
                     }
 
                     List<Article> articles = getArticles(htmlDoc);
-                    Article lastArticle = articles.Last();
 
-                    if (
-                        !articles.Any() ||
-                        lastArticle.Created_at.Year != getRangeDate.Year ||
-                        lastArticle.Created_at.Month != getRangeDate.Month
-                        )
+                    if (!articles.Any())
                     {
                         break;
                     }
 
                     foreach (Article article in articles)
                     {
+                        if (startDatePickerValue <= article.Created_at)
+                        {
+                            continue;
+                        }
+
+                        if (article.Created_at < endDatePickerValue)
+                        {
+                            break;
+                        }
+
                         Articles.Add(article.GallNum, article);
+
+                        Console.WriteLine(article.Created_at);
 
                         articleDataGrid.Rows.Add(
                             article.Category,
@@ -184,7 +198,22 @@ namespace dcinside_collector
 
         private void metroButton1_Click_1(object sender, EventArgs e)
         {
-            if (htmlOutputFolderBrowserDialog.ShowDialog() == DialogResult.OK)
+            if (!Articles.Any())
+            {
+                MessageBox.Show(
+                    "선택된 글이 아무것도 없습니다.",
+                    "알림",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                return;
+            }
+
+            string fileName = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+            htmlSaveDialog.FileName = fileName;
+
+            if (htmlSaveDialog.ShowDialog() == DialogResult.OK)
             {
                 HtmlAgilityPack.HtmlDocument outputDoc = new HtmlAgilityPack.HtmlDocument();
 
@@ -238,8 +267,7 @@ namespace dcinside_collector
                     }
                 }
 
-                string fileName = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-                outputDoc.Save(htmlOutputFolderBrowserDialog.SelectedPath + String.Format(@"\{0}.html", fileName));
+                outputDoc.Save(htmlSaveDialog.FileName.ToString());
             }
         }
     }
@@ -253,6 +281,8 @@ namespace dcinside_collector
         public DateTime Created_at;
         public int CommentCount;
         public bool FixNickname;
+        public int Recommend;
+        public int Views;
 
         public Article(
             string articleNumber,
@@ -261,7 +291,9 @@ namespace dcinside_collector
             string owner,
             DateTime datetime,
             int commentCount,
-            bool fix = false
+            bool fix = false,
+            int recommend = 0,
+            int views = 0
             )
         {
             GallNum = articleNumber;
@@ -271,6 +303,8 @@ namespace dcinside_collector
             Created_at = datetime;
             FixNickname = fix;
             CommentCount = commentCount;
+            Recommend = recommend;
+            Views = views;
         }
     }
 }

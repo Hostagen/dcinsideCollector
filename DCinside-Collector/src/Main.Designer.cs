@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.LoadGallButton1 = new MetroFramework.Controls.MetroButton();
+            this.loadGalleryButton = new MetroFramework.Controls.MetroButton();
             this.disableAnnounCheckBox = new System.Windows.Forms.CheckBox();
             this.articleDataGrid = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,16 +38,16 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReplyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.htmlOutputFolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.htmlSaveDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.articleDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // LoadGallButton1
+            // loadGalleryButton
             // 
-            resources.ApplyResources(this.LoadGallButton1, "LoadGallButton1");
-            this.LoadGallButton1.Name = "LoadGallButton1";
-            this.LoadGallButton1.UseSelectable = true;
-            this.LoadGallButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            resources.ApplyResources(this.loadGalleryButton, "loadGalleryButton");
+            this.loadGalleryButton.Name = "loadGalleryButton";
+            this.loadGalleryButton.UseSelectable = true;
+            this.loadGalleryButton.Click += new System.EventHandler(this.loadGalleryButton_Click);
             // 
             // disableAnnounCheckBox
             // 
@@ -119,6 +119,10 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click_1);
             // 
+            // htmlSaveDialog
+            // 
+            this.htmlSaveDialog.DefaultExt = "html";
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -126,7 +130,7 @@
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.articleDataGrid);
             this.Controls.Add(this.disableAnnounCheckBox);
-            this.Controls.Add(this.LoadGallButton1);
+            this.Controls.Add(this.loadGalleryButton);
             this.Name = "Main";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.articleDataGrid)).EndInit();
@@ -136,7 +140,7 @@
         }
 
         #endregion
-        private MetroFramework.Controls.MetroButton LoadGallButton1;
+        private MetroFramework.Controls.MetroButton loadGalleryButton;
         private System.Windows.Forms.CheckBox disableAnnounCheckBox;
         private System.Windows.Forms.DataGridView articleDataGrid;
         private MetroFramework.Controls.MetroButton metroButton1;
@@ -145,7 +149,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn author;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReplyColumn;
-        private System.Windows.Forms.FolderBrowserDialog htmlOutputFolderBrowserDialog;
+        private System.Windows.Forms.SaveFileDialog htmlSaveDialog;
     }
 }
 

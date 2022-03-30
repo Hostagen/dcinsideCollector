@@ -118,29 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="LoadGallButton1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="loadGalleryButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 63</value>
   </data>
-  <data name="LoadGallButton1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="loadGalleryButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>571, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LoadGallButton1.TabIndex" type="System.Int32, mscorlib">
+  <data name="loadGalleryButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="LoadGallButton1.Text" xml:space="preserve">
+  <data name="loadGalleryButton.Text" xml:space="preserve">
     <value>갤러리 불러오기</value>
   </data>
-  <data name="&gt;&gt;LoadGallButton1.Name" xml:space="preserve">
-    <value>LoadGallButton1</value>
+  <data name="&gt;&gt;loadGalleryButton.Name" xml:space="preserve">
+    <value>loadGalleryButton</value>
   </data>
-  <data name="&gt;&gt;LoadGallButton1.Type" xml:space="preserve">
+  <data name="&gt;&gt;loadGalleryButton.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;LoadGallButton1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;loadGalleryButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;LoadGallButton1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;loadGalleryButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="disableAnnounCheckBox.AutoSize" type="System.Boolean, mscorlib">
@@ -173,46 +173,6 @@
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="author.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ReplyColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="articleDataGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 114</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="articleDataGrid.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="articleDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>779, 334</value>
-  </data>
-  <data name="articleDataGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;articleDataGrid.Name" xml:space="preserve">
-    <value>articleDataGrid</value>
-  </data>
-  <data name="&gt;&gt;articleDataGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;articleDataGrid.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;articleDataGrid.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="Column1.HeaderText" xml:space="preserve">
     <value>카테고리</value>
   </data>
@@ -240,6 +200,31 @@
   <data name="ReplyColumn.HeaderText" xml:space="preserve">
     <value>댓글</value>
   </data>
+  <data name="articleDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 114</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="articleDataGrid.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="articleDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>779, 334</value>
+  </data>
+  <data name="articleDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;articleDataGrid.Name" xml:space="preserve">
+    <value>articleDataGrid</value>
+  </data>
+  <data name="&gt;&gt;articleDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;articleDataGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;articleDataGrid.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="metroButton1.Location" type="System.Drawing.Point, System.Drawing">
     <value>600, 63</value>
   </data>
@@ -264,7 +249,7 @@
   <data name="&gt;&gt;metroButton1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="htmlOutputFolderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="htmlSaveDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -385,11 +370,11 @@
   <data name="&gt;&gt;ReplyColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;htmlOutputFolderBrowserDialog.Name" xml:space="preserve">
-    <value>htmlOutputFolderBrowserDialog</value>
+  <data name="&gt;&gt;htmlSaveDialog.Name" xml:space="preserve">
+    <value>htmlSaveDialog</value>
   </data>
-  <data name="&gt;&gt;htmlOutputFolderBrowserDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;htmlSaveDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>
