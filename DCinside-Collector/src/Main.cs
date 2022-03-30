@@ -46,6 +46,8 @@ namespace dcinside_collector
             return DateTime.ParseExact(datetime, "MM.dd", null);
         }
 
+        private readonly Regex REPLY_REGEX = new Regex(@"\[(.+)\]");
+
         private List<Article> getArticles(HtmlAgilityPack.HtmlDocument doc)
         {
             HtmlNodeCollection articleNodes = doc.DocumentNode.SelectNodes("//tbody/tr");
@@ -114,8 +116,11 @@ namespace dcinside_collector
 
                 if (replyNode != null)
                 {
-                    string stringReplyCount = Regex.Replace(replyNode.InnerText, @"[^0-9]", "");
-                    result.CommentCount = int.Parse(stringReplyCount);
+                    string stringReplyCount = REPLY_REGEX.Match(replyNode.InnerText).Groups[1].Value;
+
+                    string[] replyCountSplit = stringReplyCount.Split(new string[] { "/" }, StringSplitOptions.None);
+
+                    result.CommentCount = int.Parse(replyCountSplit[0]);
                 }
 
                 results.Add(result);
